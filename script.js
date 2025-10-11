@@ -57,9 +57,11 @@ const typingTexts = [
 let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-const typingElement = document.getElementById('typingText');
+const typingElement = document.getElementById('heroTyping');
 
 function typeText() {
+    if (!typingElement) return; // Guard against null element
+    
     const currentText = typingTexts[textIndex];
     
     if (isDeleting) {
