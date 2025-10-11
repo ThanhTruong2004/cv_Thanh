@@ -74,15 +74,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">
-                            <i class="fas fa-laptop-code"></i>
-                            <span>Projects</span>
+                        <a class="nav-link" href="#experience">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Education</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#experience">
-                            <i class="fas fa-briefcase"></i>
-                            <span>Experience</span>
+                        <a class="nav-link" href="#projects">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Projects</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -363,14 +363,90 @@
         <div class="container">
             <div class="section-header text-center" data-aos="fade-up">
                 <h2 class="section-title">
-                    Technical <span class="title-highlight">Skills</span>
+                    Kỹ năng <span class="title-highlight">Chuyên môn & Mềm</span>
                 </h2>
                 <p class="section-subtitle">
-                    Technologies and tools I master to build reliable systems
+                    Kỹ năng kỹ thuật và kỹ năng mềm để xây dựng hệ thống đáng tin cậy
                 </p>
             </div>
             
-            <div class="skills-grid">
+            <!-- Skills Table Layout -->
+            <div class="skills-table-container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="skills-column technical-skills">
+                            <h3 class="column-title">
+                                <i class="fas fa-code"></i>
+                                Kỹ năng chuyên môn
+                            </h3>
+                            <div class="skills-content">
+                                <ul class="skills-list">
+                                    <li>
+                                        <i class="fas fa-server"></i>
+                                        <strong>Hệ thống & OS:</strong> Linux (Ubuntu/CentOS), shell scripting (Bash), systemd, Cron, xử lý sự cố hệ thống cơ bản
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-network-wired"></i>
+                                        <strong>Mạng:</strong> TCP/IP, cơ bản routing/switching, SDN (Mininet, ONOS), cân bằng tải Round-Robin, khái niệm firewall
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-laptop-code"></i>
+                                        <strong>Lập trình & Tự động hóa:</strong> C++, C#, Python (tự động hóa, scripting, xử lý dữ liệu); Git; Docker cơ bản & ảo hoá (VirtualBox)
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-chart-line"></i>
+                                        <strong>Giám sát & Công cụ (quen thuộc):</strong> Prometheus/Grafana, Nagios, logging & alerting cơ bản
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-database"></i>
+                                        <strong>Cơ sở dữ liệu:</strong> MySQL/Postgres cơ bản, làm sạch dữ liệu cho pipeline ML
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-brain"></i>
+                                        <strong>AI & CV (ứng dụng):</strong> tiền xử lý dữ liệu, khái niệm CNN cho nhận diện ảnh
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-5">
+                        <div class="skills-column soft-skills-column">
+                            <h3 class="column-title">
+                                <i class="fas fa-user-tie"></i>
+                                Kỹ năng mềm
+                            </h3>
+                            <div class="skills-content">
+                                <ul class="skills-list">
+                                    <li>
+                                        <i class="fas fa-heart"></i>
+                                        <strong>Kiên trì & bền bỉ:</strong> vượt qua lỗi, lặp lại sửa chữa đến khi ổn định
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-users-cog"></i>
+                                        <strong>Lãnh đạo nhóm:</strong> quản lý nhóm nhỏ, phân công & theo dõi tiến độ
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-language"></i>
+                                        <strong>Giao tiếp:</strong> đọc & hiểu tài liệu kỹ thuật tiếng Anh
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-clock"></i>
+                                        <strong>Quản lý thời gian:</strong> ưu tiên công việc khi deadline gấp
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-book"></i>
+                                        <strong>Tài liệu & kiểm thử:</strong> viết runbook, kế hoạch kiểm thử rõ ràng
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Visual Skills Grid (Original) -->
+            <div class="skills-grid mt-5">
                 <!-- System & OS Skills -->
                 <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
                     <div class="category-header">
@@ -522,6 +598,96 @@
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section section-padding">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2 class="section-title">
+                    Education & <span class="title-highlight">Certifications</span>
+                </h2>
+                <p class="section-subtitle">
+                    Academic background and professional certifications
+                </p>
+            </div>
+            
+            <div class="row">
+                <!-- Education -->
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="education-card">
+                        <div class="card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="card-title">Học vấn</h3>
+                        
+                        <div class="education-item">
+                            <div class="edu-header">
+                                <h4>Đại học Đà Lạt</h4>
+                                <span class="edu-period">Tháng 9/2022 – Tháng 2/2027 (dự kiến)</span>
+                            </div>
+                            <div class="edu-details">
+                                <p class="edu-degree">Cử nhân Mạng Máy tính</p>
+                                <p class="edu-gpa">GPA: <strong>3.43 / 4.00</strong></p>
+                                
+                                <div class="edu-achievements">
+                                    <h5>Nghiên cứu & Xuất bản:</h5>
+                                    <ul>
+                                        <li><i class="fas fa-flask"></i> Đề tài nghiên cứu: "Phát triển nền tảng học tập tích hợp AI"</li>
+                                        <li><i class="fas fa-book"></i> Bài báo hội thảo: ICT 2025 — "Cân bằng tải trong mạng SDN sử dụng thuật toán Round Robin"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certifications -->
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="certifications-card">
+                        <div class="card-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 class="card-title">Chứng chỉ</h3>
+                        
+                        <div class="cert-list">
+                            <div class="cert-item in-progress">
+                                <div class="cert-icon">
+                                    <i class="fas fa-network-wired"></i>
+                                </div>
+                                <div class="cert-info">
+                                    <h4>CCNA</h4>
+                                    <p class="cert-status">Đang học (dự kiến hoàn thành: Q2/2026)</p>
+                                    <span class="cert-badge in-progress">In Progress</span>
+                                </div>
+                            </div>
+                            
+                            <div class="cert-item completed">
+                                <div class="cert-icon">
+                                    <i class="fab fa-aws"></i>
+                                </div>
+                                <div class="cert-info">
+                                    <h4>AWS Academy Graduate</h4>
+                                    <p class="cert-status">Hoàn thành: 26 Sep 2025</p>
+                                    <span class="cert-badge completed">Completed</span>
+                                </div>
+                            </div>
+                            
+                            <div class="cert-item completed">
+                                <div class="cert-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="cert-info">
+                                    <h4>AI Opportunity in Lam Dong</h4>
+                                    <p class="cert-status">Hoàn thành: Jun 2025</p>
+                                    <span class="cert-badge completed">Completed</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -853,6 +1019,226 @@
             </div>
         </div>
     </section>
+
+    <!-- Highlights & Impact Section -->
+    <section id="highlights" class="highlights-section section-padding">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2 class="section-title">
+                    Điểm nhấn & <span class="title-highlight">Tác động</span>
+                </h2>
+                <p class="section-subtitle">
+                    Nhấn mạnh tinh thần kiên trì và những đóng góp thực tế
+                </p>
+            </div>
+            
+            <div class="highlights-grid">
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="highlight-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Hoàn thiện Prototype</h3>
+                    <p>Hoàn thiện nhiều prototype (AIoT, SDN load balancer, nền tảng AI học tập) bằng cách lặp lại khắc phục lỗi và giữ vững tinh thần nhóm.</p>
+                </div>
+                
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="highlight-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3>Khắc phục Sự cố</h3>
+                    <p>Khắc phục sự cố huấn luyện mô hình bằng cách cải tiến tiền xử lý dữ liệu và chu trình kiểm thử lặp.</p>
+                </div>
+                
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="highlight-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Tài liệu Hóa</h3>
+                    <p>Soạn runbook và tài liệu để người khác có thể tái tạo và vận hành hệ thống.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2 class="section-title">
+                    Liên hệ & <span class="title-highlight">Portfolio</span>
+                </h2>
+                <p class="section-subtitle">
+                    Kết nối với tôi qua các kênh sau
+                </p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-info" data-aos="fade-up" data-aos-delay="100">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Email</h4>
+                                        <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Điện thoại</h4>
+                                        <p><a href="tel:+84">+84 [số điện thoại]</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fab fa-github"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>GitHub</h4>
+                                        <p><a href="#" target="_blank">github.com/[your-username]</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fab fa-linkedin"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>LinkedIn</h4>
+                                        <p><a href="#" target="_blank">linkedin.com/in/[your-profile]</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Địa chỉ</h4>
+                                        <p>Đà Lạt, Lâm Đồng</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-id-card"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>MSSV</h4>
+                                        <p>2212462</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-links" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="links-title">Portfolio & Demo</h3>
+                        <div class="links-grid">
+                            <a href="#" class="portfolio-link" target="_blank">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub Repository</span>
+                                <small>SDN project, AIoT demo, scripts</small>
+                            </a>
+                            <a href="#" class="portfolio-link" target="_blank">
+                                <i class="fas fa-video"></i>
+                                <span>Demo Videos</span>
+                                <small>Project demonstrations</small>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="download-cv" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#" class="btn btn-primary btn-lg">
+                            <i class="fas fa-download"></i>
+                            Tải xuống CV (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps Section -->
+    <section id="next-steps" class="next-steps-section section-padding">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2 class="section-title">
+                    Ghi chú & <span class="title-highlight">Các bước tiếp theo</span>
+                </h2>
+                <p class="section-subtitle">
+                    Khuyến nghị để nâng cao hồ sơ ứng tuyển
+                </p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Thêm số liệu cụ thể</h4>
+                        <p>Thêm số liệu cụ thể cho các dự án khi có (ví dụ: độ chính xác mô hình, số luồng kiểm thử, tỉ lệ lỗi giảm).</p>
+                    </div>
+                </div>
+                
+                <div class="step-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Cập nhật GitHub</h4>
+                        <p>Cập nhật README và GIF/Video demo lên GitHub để nhà tuyển dụng xem nhanh.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Nhấn mạnh từ khóa</h4>
+                        <p>Nhấn mạnh từ khóa liên quan System Admin (Bash, Cron, Docker, backup & recovery, monitoring) trong CV gửi cho từng job.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Chuẩn bị thư ứng tuyển</h4>
+                        <p>Chuẩn bị thư ứng tuyển 1 trang nêu 2 câu chuyện thất bại → học được → thành công để chứng minh tinh thần kiên trì.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reference-note" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-info-circle"></i>
+                <p><em>Người tham khảo sẽ cung cấp khi yêu cầu.</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Trương Công Thành. All rights reserved.</p>
+                <p class="footer-motto">"Kiên nhẫn khắc phục lỗi đến khi hệ thống ổn định"</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
