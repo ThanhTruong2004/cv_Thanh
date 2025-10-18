@@ -1,39 +1,83 @@
-# CV Portfolio - Trương Công Thành
+# 🚀 CV Portfolio - Trương Công Thành
 
-## Cấu trúc dự án
+> Modern, interactive portfolio website with dynamic features and beautiful animations
 
-Dự án CV Portfolio đã được tách thành các file riêng biệt để dễ bảo trì và phát triển:
+## 📁 Cấu trúc dự án
 
-### File chính:
-- **`index.html`** - File HTML chính chứa cấu trúc và nội dung website
-- **`styles.css`** - File CSS chứa tất cả styles và animations
-- **`script.js`** - File JavaScript chứa tất cả logic và tương tác
+```
+cv_Thanh/
+├── index.html              # Main HTML file
+├── styles.css              # All styles & animations
+├── script.js               # All JavaScript logic
+├── config.js               # 🔒 Credentials (NOT in GitHub)
+├── config.example.js       # Template for config.js
+├── .gitignore              # Git ignore rules
+├── EMAILJS_SETUP.md        # EmailJS setup guide
+└── data/
+    └── projects.json       # Projects data
+```
 
-### File backup:
-- **`index_old.html`** - File HTML gốc với CSS và JS nhúng (để tham khảo)
+## ⚙️ Setup Instructions
 
-## Tính năng
+### 1. Clone Repository
+```bash
+git clone https://github.com/ThanhTruong2004/cv_Thanh.git
+cd cv_Thanh
+```
 
-### Giao diện
-- ✨ Thiết kế hiện đại với Glass morphism
-- 🎨 Gradient background animation
-- 📱 Responsive design cho mọi thiết bị
-- 🌟 Smooth animations và transitions
+### 2. Setup EmailJS (Required for contact form)
+```bash
+# Copy config template
+copy config.example.js config.js
 
-### Chức năng
-- 🚀 Page loader với animation
-- 📜 Smooth scrolling navigation
-- ⌨️ Typing animation cho tiêu đề
-- 👁️ Parallax effects
-- 📊 Animated skill progress bars
-- 🎯 Intersection Observer cho animations
-- 📱 Mobile-friendly navigation
+# Edit config.js and add your credentials
+# See EMAILJS_SETUP.md for detailed guide
+```
 
-### Hiệu suất
-- ⚡ Debounced scroll events
-- 🔄 Preloading critical resources
-- 🎪 Staggered animations
-- 📈 Performance optimizations
+### 3. Open Website
+```bash
+# Option 1: Use Python
+python -m http.server 8000
+
+# Option 2: Use Live Server in VS Code
+# Right-click index.html → Open with Live Server
+```
+
+### 4. Access
+Open browser: `http://localhost:8000`
+
+## ✨ Features
+
+### 🎨 UI/UX
+- ✅ Modern design with Glass morphism
+- ✅ Dark/Light theme toggle with persistence
+- ✅ Status bar with real-time clock
+- ✅ Custom animated cursor (desktop only)
+- ✅ Particles.js background effects
+- ✅ Smooth animations & transitions
+- ✅ Fully responsive design
+
+### 🚀 Dynamic Features
+- ✅ **Contact Form** with EmailJS integration
+- ✅ **Visitor Tracking** (localStorage)
+- ✅ **GitHub API** integration (auto-fetch repos)
+- ✅ **Dynamic Projects** loading from JSON
+- ✅ Email copy to clipboard
+- ✅ Form validation & error handling
+- ✅ Loading states & notifications
+
+### 🎯 Animations
+- ✅ Typing animation effect
+- ✅ Skill progress bars animation
+- ✅ Scroll-triggered animations (AOS)
+- ✅ Parallax effects
+- ✅ Smooth page transitions
+- ✅ Interactive hover effects
+
+### � Analytics
+- ✅ Visit counter
+- ✅ Contact form submissions tracking
+- ✅ localStorage data persistence
 
 ## Cách sử dụng
 
@@ -77,16 +121,50 @@ Trong file `script.js`, bạn có thể tùy chỉnh:
 - Animation timing
 - Scroll behavior
 
-## Development
+## 🔒 Security & Privacy
+
+### What's NOT pushed to GitHub:
+- ❌ `config.js` - Contains EmailJS credentials
+- ❌ `.env` files - Environment variables
+- ❌ Personal data in localStorage
+
+### What's SAFE to push:
+- ✅ `config.example.js` - Template only
+- ✅ All HTML/CSS/JS code
+- ✅ Documentation
+
+### Important Files:
+```
+config.js          🔒 YOUR credentials (gitignored)
+config.example.js  ✅ Template for others
+.gitignore         ✅ Protects sensitive files
+```
+
+## 🛠️ Development
+
+### Tech Stack
+- **Frontend:** HTML5, CSS3, JavaScript (ES6+)
+- **Libraries:** 
+  - Bootstrap 5.3.0
+  - Font Awesome 6.4.0
+  - AOS 2.3.4 (Animate On Scroll)
+  - Particles.js 2.0.0
+  - EmailJS 3.x
+- **APIs:** GitHub API, EmailJS API
 
 ### File Structure
 ```
 cv_Thanh/
-├── index.html          # Main HTML file
-├── styles.css          # All CSS styles
-├── script.js           # All JavaScript
-├── index_old.html      # Original file (backup)
-└── README.md           # This file
+├── index.html              # Main HTML
+├── styles.css              # All styles
+├── script.js               # All logic
+├── config.js               # 🔒 Credentials (NOT in git)
+├── config.example.js       # Config template
+├── .gitignore              # Git ignore rules
+├── EMAILJS_SETUP.md        # Setup guide
+├── README.md               # This file
+└── data/
+    └── projects.json       # Projects data
 ```
 
 ### Best Practices

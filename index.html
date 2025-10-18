@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +17,34 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div class="status-left">
+            <span class="status-item">
+                <i class="fas fa-terminal"></i>
+                <span id="statusCommand">portfolio.sh</span>
+            </span>
+            <span class="status-item">
+                <i class="fas fa-code-branch"></i>
+                <span>main</span>
+            </span>
+        </div>
+        <div class="status-right">
+            <span class="status-item">
+                <i class="fas fa-clock"></i>
+                <span id="currentTime"></span>
+            </span>
+            <span class="status-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Đà Lạt, VN</span>
+            </span>
+        </div>
+    </div>
+
     <!-- Page Loader -->
     <div id="pageLoader" class="page-loader">
         <div class="loader-content">
@@ -46,8 +74,14 @@
     <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#home">
-                <span class="brand-text">&lt;Thành.dev/&gt;</span>
+                <span class="brand-text">Thành System Administrator</span>
             </a>
+            
+            <!-- Theme Toggle -->
+            <button id="themeToggle" class="theme-toggle" title="Toggle Dark/Light Mode">
+                <i class="fas fa-sun"></i>
+            </button>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span></span>
                 <span></span>
@@ -98,7 +132,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero-section">
-        <div class="hero-particles"></div>
+        <div id="particles-js" class="hero-particles"></div>
         <div class="container">
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-6" data-aos="fade-right">
@@ -129,8 +163,8 @@
                                 <div class="stat-label">Projects</div>
                             </div>
                             <div class="stat-item">
-                                <div class="stat-number" data-count="100">0</div>
-                                <div class="stat-label">% Commitment</div>
+                                <div class="stat-number" data-count="2">0</div>
+                                <div class="stat-label">Years Learning</div>
                             </div>
                         </div>
                         <div class="hero-actions">
@@ -139,8 +173,8 @@
                                 View My Work
                             </a>
                             <a href="#contact" class="btn btn-outline">
-                                <i class="fas fa-download"></i>
-                                Download CV
+                                <i class="fas fa-envelope"></i>
+                                Contact Me
                             </a>
                         </div>
                     </div>
@@ -538,315 +572,152 @@
                     Featured <span class="title-highlight">Projects</span>
                 </h2>
                 <p class="section-subtitle">
-                    Real-world projects showcasing technical skills and "Never Give Up" spirit
+                    Real-world projects showcasing technical skills
                 </p>
             </div>
             
-            <div class="projects-grid">
+            <div class="projects-grid-simple">
                 <!-- Project 1: AIoT Emotion Recognition -->
-                <div class="project-card featured" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div class="project-badge">Featured Project</div>
+                <div class="project-card-simple" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-icon-simple">
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">AIoT Emotion Recognition System</h3>
-                        <p class="project-period">June 2025 – Present • Team Lead (4 members)</p>
-                        <p class="project-description">
-                            Led development of AI-powered emotion recognition system with IoT integration. 
-                            Built complete pipeline from CNN model training to ESP32 real-time alerts, 
-                            overcoming hardware limitations through persistent debugging and optimization.
-                        </p>
-                        
-                        <!-- Technical Architecture Diagram -->
-                        <div class="tech-architecture">
-                            <div class="arch-flow">
-                                <div class="arch-step">
-                                    <i class="fas fa-camera"></i>
-                                    <span>Camera Input</span>
-                                </div>
-                                <div class="arch-arrow">→</div>
-                                <div class="arch-step">
-                                    <i class="fas fa-brain"></i>
-                                    <span>CNN Processing</span>
-                                </div>
-                                <div class="arch-arrow">→</div>
-                                <div class="arch-step">
-                                    <i class="fas fa-microchip"></i>
-                                    <span>ESP32 Alert</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="project-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-users"></i>
-                                <span>Team Leadership & Project Management</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-code"></i>
-                                <span>Python + OpenCV + TensorFlow</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-microchip"></i>
-                                <span>ESP32 IoT Integration</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-clock"></i>
-                                <span>Real-time Processing</span>
-                            </div>
-                        </div>
-                        
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">OpenCV</span>
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">CNN</span>
-                            <span class="tech-tag">ESP32</span>
-                            <span class="tech-tag">IoT</span>
-                            <span class="tech-tag">Computer Vision</span>
-                        </div>
-                        
-                        <div class="project-results">
-                            <h4>🏆 Key Achievements:</h4>
-                            <ul>
-                                <li>✅ <strong>Real-time emotion detection</strong> with 85%+ accuracy</li>
-                                <li>✅ <strong>ESP32 integration</strong> for instant IoT alerts</li>
-                                <li>✅ <strong>Complete documentation</strong> & GitHub repository</li>
-                                <li>✅ <strong>Hardware constraint solutions</strong> through optimization</li>
-                                <li>✅ <strong>Team coordination</strong> under tight deadlines</li>
-                            </ul>
-                        </div>
-                        
-                        <!-- Demo Preview -->
-                        <div class="demo-preview">
-                            <div class="demo-thumbnail">
-                                <i class="fas fa-play-circle"></i>
-                                <span>Live Demo Available</span>
-                            </div>
-                        </div>
+                    <h3 class="project-title-simple">AIoT Emotion Recognition</h3>
+                    <p class="project-desc-simple">
+                        AI-powered emotion detection system with IoT integration using CNN and ESP32.
+                    </p>
+                    <div class="project-tech-simple">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>IoT</span>
                     </div>
-                    <div class="project-actions">
-                        <a href="https://drive.google.com/file/d/1rgnmHgfyHLQ3dkVPcG8YW77U2Lt4SvAQ/view?usp=sharing" 
-                           target="_blank" class="btn btn-primary">
-                            <i class="fas fa-play"></i>
-                            Watch Demo Video
-                        </a>
-                        <a href="#" class="btn btn-outline">
-                            <i class="fab fa-github"></i>
-                            View Code
-                        </a>
-                    </div>
+                    <a href="https://drive.google.com/file/d/1rgnmHgfyHLQ3dkVPcG8YW77U2Lt4SvAQ/view?usp=sharing" 
+                       target="_blank" class="project-link-simple">
+                        <i class="fas fa-external-link-alt"></i> View Demo
+                    </a>
                 </div>
 
                 <!-- Project 2: SDN Load Balancer -->
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                        <div class="project-badge">Network Engineering</div>
+                <div class="project-card-simple" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-icon-simple">
+                        <i class="fas fa-network-wired"></i>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">SDN Load Balancer with Round-Robin</h3>
-                        <p class="project-period">January 2025 – April 2025 • Personal Project</p>
-                        <p class="project-description">
-                            Designed and implemented Software-Defined Network load balancer using Round-Robin algorithm. 
-                            Built on Mininet/ONOS platform with comprehensive monitoring and testing framework.
-                        </p>
-                        
-                        <!-- Network Topology Visualization -->
-                        <div class="network-topology">
-                            <div class="topology-diagram">
-                                <div class="network-node controller">
-                                    <i class="fas fa-server"></i>
-                                    <span>ONOS Controller</span>
-                                </div>
-                                <div class="network-connections">
-                                    <div class="network-node switch">
-                                        <i class="fas fa-sitemap"></i>
-                                        <span>OpenFlow Switch</span>
-                                    </div>
-                                    <div class="load-balance-flow">
-                                        <div class="server-node">
-                                            <i class="fas fa-server"></i>
-                                            <span>Server 1</span>
-                                        </div>
-                                        <div class="server-node">
-                                            <i class="fas fa-server"></i>
-                                            <span>Server 2</span>
-                                        </div>
-                                        <div class="server-node">
-                                            <i class="fas fa-server"></i>
-                                            <span>Server 3</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="project-tech">
-                            <span class="tech-tag">SDN</span>
-                            <span class="tech-tag">Mininet</span>
-                            <span class="tech-tag">ONOS</span>
-                            <span class="tech-tag">OpenFlow</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Network Programming</span>
-                        </div>
-                        
-                        <div class="project-results">
-                            <h4>🎯 Technical Achievements:</h4>
-                            <ul>
-                                <li>✅ <strong>Round-Robin algorithm</strong> implementation</li>
-                                <li>✅ <strong>Traffic monitoring</strong> with bandwidth metrics</li>
-                                <li>✅ <strong>Performance testing</strong> framework</li>
-                                <li>✅ <strong>Network topology</strong> visualization</li>
-                                <li>✅ <strong>Complete runbook</strong> for reproduction</li>
-                            </ul>
-                        </div>
+                    <h3 class="project-title-simple">SDN Load Balancer</h3>
+                    <p class="project-desc-simple">
+                        Software-Defined Network load balancer using Round-Robin algorithm on Mininet/ONOS.
+                    </p>
+                    <div class="project-tech-simple">
+                        <span>SDN</span>
+                        <span>Python</span>
+                        <span>ONOS</span>
                     </div>
-                    <div class="project-actions">
-                        <a href="https://drive.google.com/file/d/1mENgqNa4YtBHoGJVXfnbTaHNigxvPb7x/view?usp=drive_link" 
-                           target="_blank" class="btn btn-primary">
-                            <i class="fas fa-play"></i>
-                            Demo Video
-                        </a>
-                        <a href="#" class="btn btn-outline">
-                            <i class="fas fa-file-alt"></i>
-                            Documentation
-                        </a>
-                    </div>
+                    <a href="https://drive.google.com/file/d/1mENgqNa4YtBHoGJVXfnbTaHNigxvPb7x/view?usp=drive_link" 
+                       target="_blank" class="project-link-simple">
+                        <i class="fas fa-external-link-alt"></i> View Demo
+                    </a>
                 </div>
 
                 <!-- Project 3: Research Project -->
-                <div class="project-card research" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-microscope"></i>
-                        </div>
-                        <div class="project-badge">Scientific Research</div>
+                <div class="project-card-simple" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-icon-simple">
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">AI-Integrated Learning Platform Research</h3>
-                        <p class="project-period">December 2024 – March 2025 • Research Team</p>
-                        <p class="project-description">
-                            Student scientific research project developing AI-powered educational platform. 
-                            Focused on data preprocessing, machine learning pipeline optimization, and system reliability.
-                        </p>
-                        
-                        <!-- Research Process Flow -->
-                        <div class="research-flow">
-                            <div class="research-step">
-                                <div class="step-number">1</div>
-                                <div class="step-content">
-                                    <h5>Data Collection</h5>
-                                    <p>Educational content gathering & preprocessing</p>
-                                </div>
-                            </div>
-                            <div class="research-step">
-                                <div class="step-number">2</div>
-                                <div class="step-content">
-                                    <h5>ML Pipeline</h5>
-                                    <p>Model training & optimization</p>
-                                </div>
-                            </div>
-                            <div class="research-step">
-                                <div class="step-number">3</div>
-                                <div class="step-content">
-                                    <h5>System Integration</h5>
-                                    <p>Platform development & testing</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="project-tech">
-                            <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">Data Science</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Research Methodology</span>
-                            <span class="tech-tag">Academic Writing</span>
-                        </div>
-                        
-                        <div class="project-results">
-                            <h4>📊 Research Contributions:</h4>
-                            <ul>
-                                <li>✅ <strong>Data preprocessing pipeline</strong> for ML training</li>
-                                <li>✅ <strong>Model performance optimization</strong> through iteration</li>
-                                <li>✅ <strong>System reliability testing</strong> and documentation</li>
-                                <li>✅ <strong>Academic presentation</strong> preparation</li>
-                                <li>✅ <strong>Collaborative research</strong> with 7-member team</li>
-                            </ul>
-                        </div>
+                    <h3 class="project-title-simple">AI Learning Platform</h3>
+                    <p class="project-desc-simple">
+                        Research on AI-integrated educational platform with ML pipeline optimization.
+                    </p>
+                    <div class="project-tech-simple">
+                        <span>ML</span>
+                        <span>Python</span>
+                        <span>Research</span>
                     </div>
-                    <div class="project-actions">
-                        <a href="https://www.canva.com/design/DAGjNXUw8Ko/rNrpV5sjKqoYwFC_CF7bHA/edit?utm_content=DAGjNXUw8Ko&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" 
-                           target="_blank" class="btn btn-primary">
-                            <i class="fas fa-presentation"></i>
-                            Research Presentation
-                        </a>
-                        <a href="#" class="btn btn-outline">
-                            <i class="fas fa-file-pdf"></i>
-                            Research Paper
-                        </a>
-                    </div>
+                    <a href="https://www.canva.com/design/DAGjNXUw8Ko/rNrpV5sjKqoYwFC_CF7bHA/edit" 
+                       target="_blank" class="project-link-simple">
+                        <i class="fas fa-external-link-alt"></i> View Presentation
+                    </a>
                 </div>
             </div>
-            
-            <!-- Skills Demonstration Section -->
-            <div class="skills-demonstration" data-aos="fade-up" data-aos-delay="400">
-                <h3 class="demo-title">🛠️ Skills in Action</h3>
-                <div class="demo-grid">
-                    <div class="demo-item">
-                        <div class="demo-icon">
-                            <i class="fas fa-terminal"></i>
-                        </div>
-                        <h4>System Administration</h4>
-                        <p>Linux server management, automation scripts, and system monitoring</p>
-                        <div class="demo-badges">
-                            <span class="badge-item">Ubuntu/CentOS</span>
-                            <span class="badge-item">Bash Scripting</span>
-                            <span class="badge-item">Systemd</span>
-                        </div>
-                    </div>
-                    
-                    <div class="demo-item">
-                        <div class="demo-icon">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                        <h4>Network Engineering</h4>
-                        <p>SDN implementation, load balancing, and network security protocols</p>
-                        <div class="demo-badges">
-                            <span class="badge-item">TCP/IP</span>
-                            <span class="badge-item">SDN/ONOS</span>
-                            <span class="badge-item">Routing</span>
-                        </div>
-                    </div>
-                    
-                    <div class="demo-item">
-                        <div class="demo-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h4>Development & Automation</h4>
-                        <p>Python scripting, CI/CD pipelines, and infrastructure as code</p>
-                        <div class="demo-badges">
-                            <span class="badge-item">Python</span>
-                            <span class="badge-item">Docker</span>
-                            <span class="badge-item">Git</span>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section-padding" style="background: var(--dark);">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2 class="section-title">
+                    Work <span class="highlight">Experience</span>
+                </h2>
+                <p class="section-subtitle">
+                    My professional journey and practical experiences
+                </p>
+            </div>
+
+            <div class="timeline" data-aos="fade-up" data-aos-delay="100">
+                <!-- Experience Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Jun 2025 - Present</div>
+                        <h3 class="timeline-title">Team Lead - AIoT Emotion Recognition Project</h3>
+                        <p class="timeline-company">Đại học Đà Lạt</p>
+                        <ul class="timeline-description">
+                            <li>Led 4-member team developing AI-powered emotion recognition system</li>
+                            <li>Managed project timeline, task distribution, and team coordination</li>
+                            <li>Implemented CNN model training and ESP32 IoT integration</li>
+                            <li>Achieved 85%+ accuracy in real-time emotion detection</li>
+                        </ul>
+                        <div class="timeline-skills">
+                            <span>Project Management</span>
+                            <span>Team Leadership</span>
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>IoT</span>
                         </div>
                     </div>
-                    
-                    <div class="demo-item">
-                        <div class="demo-icon">
-                            <i class="fas fa-chart-line"></i>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Jan 2025 - Apr 2025</div>
+                        <h3 class="timeline-title">Network Engineer - SDN Project</h3>
+                        <p class="timeline-company">Personal Project</p>
+                        <ul class="timeline-description">
+                            <li>Designed and implemented SDN load balancer using Round-Robin algorithm</li>
+                            <li>Built on Mininet/ONOS platform with comprehensive monitoring</li>
+                            <li>Created performance testing framework and documentation</li>
+                            <li>Optimized network traffic distribution across multiple servers</li>
+                        </ul>
+                        <div class="timeline-skills">
+                            <span>SDN</span>
+                            <span>Mininet</span>
+                            <span>ONOS</span>
+                            <span>Network Engineering</span>
+                            <span>Python</span>
                         </div>
-                        <h4>Monitoring & Analytics</h4>
-                        <p>System performance monitoring, log analysis, and alerting systems</p>
-                        <div class="demo-badges">
-                            <span class="badge-item">Prometheus</span>
-                            <span class="badge-item">Grafana</span>
-                            <span class="badge-item">Logging</span>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Dec 2024 - Mar 2025</div>
+                        <h3 class="timeline-title">Research Team Member</h3>
+                        <p class="timeline-company">AI-Integrated Learning Platform Research</p>
+                        <ul class="timeline-description">
+                            <li>Contributed to student scientific research project with 7-member team</li>
+                            <li>Developed data preprocessing pipeline for ML training</li>
+                            <li>Performed model performance optimization and system reliability testing</li>
+                            <li>Prepared academic presentation and documentation</li>
+                        </ul>
+                        <div class="timeline-skills">
+                            <span>Machine Learning</span>
+                            <span>Data Science</span>
+                            <span>Research</span>
+                            <span>Python</span>
+                            <span>Teamwork</span>
                         </div>
                     </div>
                 </div>
@@ -854,10 +725,138 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding" style="background: var(--gray-900);">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2 class="section-title">
+                    Get In <span class="highlight">Touch</span>
+                </h2>
+                <p class="section-subtitle">
+                    Let's connect and discuss opportunities
+                </p>
+            </div>
+
+            <div class="row justify-content-center">
+                <!-- Contact Info Cards -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="contact-title">Email</h3>
+                        <p class="contact-info">truongcongthanh4976@gmail.com</p>
+                        <a href="mailto:truongcongthanh4976@gmail.com" class="contact-link">Send Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-form-wrapper">
+                        <h3 class="form-title">
+                            <i class="fas fa-paper-plane"></i> Để lại thông tin cho tôi
+                        </h3>
+                        <p class="form-subtitle">Điền thông tin bên dưới và tôi sẽ liên hệ lại sớm nhất!</p>
+                        
+                        <form id="contactForm" class="contact-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="userName">
+                                            <i class="fas fa-user"></i> Họ và Tên *
+                                        </label>
+                                        <input type="text" id="userName" name="user_name" class="form-input" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="userEmail">
+                                            <i class="fas fa-envelope"></i> Email *
+                                        </label>
+                                        <input type="email" id="userEmail" name="user_email" class="form-input" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="userPhone">
+                                    <i class="fas fa-phone"></i> Số điện thoại
+                                </label>
+                                <input type="tel" id="userPhone" name="user_phone" class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="userSubject">
+                                    <i class="fas fa-tag"></i> Tiêu đề *
+                                </label>
+                                <input type="text" id="userSubject" name="subject" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="userMessage">
+                                    <i class="fas fa-comment"></i> Nội dung *
+                                </label>
+                                <textarea id="userMessage" name="message" class="form-textarea" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Gửi tin nhắn</span>
+                            </button>
+                            
+                            <div id="formStatus" class="form-status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-section text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+                <h3 class="social-title" style="color: var(--white); margin-bottom: 2rem;">Follow Me</h3>
+                <div class="social-links">
+                    <a href="https://github.com/ThanhTruong2004" target="_blank" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/truongcongthanh2004/" target="_blank" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100039799009043" target="_blank" class="social-link" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Click to copy email" id="copyEmailIcon" data-email="truongcongthanh4976@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Trương Công Thành. All rights reserved.</p>
+                <p class="footer-tagline">
+                    Designed & Built by <strong>Trương Công Thành</strong> 
+                    with <i class="fas fa-heart" style="color: var(--accent);"></i> and 
+                    <i class="fas fa-code" style="color: var(--primary);"></i>
+                </p>
+            </div>
+        </div>
+    </footer>
+
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <!-- AOS Animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Config (credentials) - KHÔNG push lên GitHub -->
+    <script src="config.js"></script>
     <!-- Custom JS -->
     <script src="script.js"></script>
 </body>

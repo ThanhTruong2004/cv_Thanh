@@ -1,0 +1,34 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Linux Server Management",
+      "description": "Quản lý và vận hành hệ thống Linux server, cấu hình dịch vụ web, database và monitoring",
+      "tags": ["Linux", "Apache", "MySQL", "Nginx"],
+      "icon": "fas fa-server",
+      "github": "https://github.com/ThanhTruong2004",
+      "demo": null,
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Network Configuration",
+      "description": "Thiết kế và triển khai hạ tầng mạng, cấu hình router, switch, firewall và VPN",
+      "tags": ["Networking", "Cisco", "Firewall", "VPN"],
+      "icon": "fas fa-network-wired",
+      "github": "https://github.com/ThanhTruong2004",
+      "demo": null,
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "System Automation Scripts",
+      "description": "Tạo scripts tự động hóa các tác vụ quản trị hệ thống, backup và monitoring",
+      "tags": ["Bash", "Python", "Automation", "Scripting"],
+      "icon": "fas fa-code",
+      "github": "https://github.com/ThanhTruong2004",
+      "demo": null,
+      "featured": true
+    }
+  ]
+}

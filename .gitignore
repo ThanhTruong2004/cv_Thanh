@@ -1,0 +1,36 @@
+# EmailJS Credentials - BẢO MẬT
+config.js
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Node modules (nếu dùng Node.js sau này)
+node_modules/
+package-lock.json
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Backup files
+*.backup
+*.bak
+*_backup.*
+
+# Build files (nếu có)
+dist/
+build/
