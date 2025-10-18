@@ -604,10 +604,11 @@ function initializeCustomCursor() {
 
 // EmailJS Configuration & Contact Form
 function initializeEmailJS() {
-    // Load credentials từ config.js (file bảo mật, không push lên GitHub)
-    const EMAILJS_PUBLIC_KEY = typeof CONFIG !== 'undefined' ? CONFIG.emailjs.publicKey : 'YOUR_PUBLIC_KEY_HERE';
-    const EMAILJS_SERVICE_ID = typeof CONFIG !== 'undefined' ? CONFIG.emailjs.serviceId : 'YOUR_SERVICE_ID_HERE';
-    const EMAILJS_TEMPLATE_ID = typeof CONFIG !== 'undefined' ? CONFIG.emailjs.templateId : 'YOUR_TEMPLATE_ID_HERE';
+    // PRODUCTION: Hardcoded credentials (sẽ public trên GitHub)
+    // ⚠️ CHỈ DÙNG KHI DEPLOY, LOCAL VẪN DÙNG config.js
+    const EMAILJS_PUBLIC_KEY = typeof CONFIG !== 'undefined' ? CONFIG.emailjs.publicKey : 'ha17CumyVy_BJnxIx';
+    const EMAILJS_SERVICE_ID = typeof CONFIG !== 'undefined' ? CONFIG.emailjs.serviceId : 'service_vj04pdz';
+    const EMAILJS_TEMPLATE_ID = typeof CONFIG !== 'undefined' ? CONFIG.emailjs.templateId : 'template_d0v0e2r';
     
     // Initialize EmailJS
     if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY_HERE') {
@@ -645,22 +646,47 @@ function initializeEmailJS() {
                 // Save to localStorage (backup)
                 saveContactToLocalStorage(formData);
                 
-                // Send via EmailJS
-                if (EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY_HERE') {
-                    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData);
+                // Check if running on Vercel (có API endpoint)
+                const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+                
+                if (isProduction) {
+                    // PRODUCTION: Send via Vercel Serverless Function (BẢO MẬT)
+                    const response = await fetch('/api/send-email', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData)
+                    });
                     
-                    // Success
-                    formStatus.className = 'form-status success';
-                    formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Gửi thành công! Tôi sẽ liên hệ lại sớm.';
-                    formStatus.style.display = 'block';
+                    const result = await response.json();
                     
-                    // Reset form
-                    contactForm.reset();
+                    if (response.ok && result.success) {
+                        // Success
+                        formStatus.className = 'form-status success';
+                        formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Gửi thành công! Tôi sẽ liên hệ lại sớm.';
+                        formStatus.style.display = 'block';
+                        contactForm.reset();
+                    } else {
+                        throw new Error(result.error || 'Failed to send email');
+                    }
+                    
                 } else {
-                    // Demo mode - no EmailJS configured
-                    formStatus.className = 'form-status success';
-                    formStatus.innerHTML = '<i class="fas fa-info-circle"></i> Form đã lưu vào localStorage (EmailJS chưa cấu hình)';
-                    formStatus.style.display = 'block';
+                    // DEVELOPMENT: Send via EmailJS client-side (LOCAL)
+                    if (EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY_HERE') {
+                        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData);
+                        
+                        // Success
+                        formStatus.className = 'form-status success';
+                        formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Gửi thành công! (Local mode)';
+                        formStatus.style.display = 'block';
+                        contactForm.reset();
+                    } else {
+                        // Demo mode
+                        formStatus.className = 'form-status success';
+                        formStatus.innerHTML = '<i class="fas fa-info-circle"></i> Form đã lưu vào localStorage (Demo mode)';
+                        formStatus.style.display = 'block';
+                    }
                 }
                 
             } catch (error) {
