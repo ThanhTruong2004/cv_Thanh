@@ -648,8 +648,11 @@ function initializeEmailJS() {
                 
                 // Check if running on Vercel (có API endpoint)
                 const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+                console.log('🌐 Hostname:', window.location.hostname);
+                console.log('🔧 Is Production:', isProduction);
                 
                 if (isProduction) {
+                    console.log('📤 Sending via Vercel API...');
                     // PRODUCTION: Send via Vercel Serverless Function (BẢO MẬT)
                     const response = await fetch('/api/send-email', {
                         method: 'POST',
@@ -659,7 +662,9 @@ function initializeEmailJS() {
                         body: JSON.stringify(formData)
                     });
                     
+                    console.log('📥 Response status:', response.status);
                     const result = await response.json();
+                    console.log('📥 Response data:', result);
                     
                     if (response.ok && result.success) {
                         // Success
