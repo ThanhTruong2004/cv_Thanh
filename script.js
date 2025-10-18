@@ -646,14 +646,12 @@ function initializeEmailJS() {
                 // Save to localStorage (backup)
                 saveContactToLocalStorage(formData);
                 
-                // Check if running on Vercel (có API endpoint)
-                const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+                // LUÔN LUÔN dùng API endpoint (production mode)
+                // Check if API exists
                 console.log('🌐 Hostname:', window.location.hostname);
-                console.log('🔧 Is Production:', isProduction);
+                console.log('� Attempting to send via API...');
                 
-                if (isProduction) {
-                    console.log('📤 Sending via Vercel API...');
-                    // PRODUCTION: Send via Vercel Serverless Function (BẢO MẬT)
+                try {
                     const response = await fetch('/api/send-email', {
                         method: 'POST',
                         headers: {
@@ -663,10 +661,15 @@ function initializeEmailJS() {
                     });
                     
                     console.log('📥 Response status:', response.status);
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    
                     const result = await response.json();
                     console.log('📥 Response data:', result);
                     
-                    if (response.ok && result.success) {
+                    if (result.success) {
                         // Success
                         formStatus.className = 'form-status success';
                         formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Gửi thành công! Tôi sẽ liên hệ lại sớm.';
@@ -675,21 +678,21 @@ function initializeEmailJS() {
                     } else {
                         throw new Error(result.error || 'Failed to send email');
                     }
+                } catch (apiError) {
+                    console.error('❌ API Error:', apiError);
                     
-                } else {
-                    // DEVELOPMENT: Send via EmailJS client-side (LOCAL)
-                    if (EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY_HERE') {
+                    // Fallback: Try EmailJS direct (for local development)
+                    console.log('🔄 Falling back to EmailJS direct...');
+                    if (EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY_HERE' && typeof emailjs !== 'undefined') {
                         await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData);
-                        
-                        // Success
                         formStatus.className = 'form-status success';
-                        formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Gửi thành công! (Local mode)';
+                        formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Gửi thành công! (Fallback mode)';
                         formStatus.style.display = 'block';
                         contactForm.reset();
                     } else {
-                        // Demo mode
-                        formStatus.className = 'form-status success';
-                        formStatus.innerHTML = '<i class="fas fa-info-circle"></i> Form đã lưu vào localStorage (Demo mode)';
+                        // Final fallback
+                        formStatus.className = 'form-status error';
+                        formStatus.innerHTML = '<i class="fas fa-exclamation-circle"></i> Không thể gửi email. Vui lòng thử lại sau!';
                         formStatus.style.display = 'block';
                     }
                 }
