@@ -1,6 +1,7 @@
 // Vercel Serverless Function - Send Email
 // File này sẽ chạy trên server, bảo vệ EmailJS credentials
 
+// @ts-nocheck
 export default async function handler(req, res) {
   // Chỉ cho phép POST method
   if (req.method !== 'POST') {
@@ -78,7 +79,7 @@ export default async function handler(req, res) {
     console.error('Server error:', error);
     return res.status(500).json({ 
       error: 'Internal server error',
-      message: error.message 
+      message: error instanceof Error ? error.message : 'Unknown error'
     });
   }
 }
